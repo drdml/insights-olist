@@ -7509,15 +7509,38 @@ a.anchor-link {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<main>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="An%C3%A1lise-de-Dados---Olist">Análise de Dados - Olist<a class="anchor-link" href="#An%C3%A1lise-de-Dados---Olist">¶</a></h1><p>Este jupyter notebook apresenta uma análise geral dos dados da plataforma de vendas Olist, organizando e visualizando informações sobre clientes, produtos e vendas.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="1.-Importa%C3%A7%C3%A3o-das-Bibliotecas-e-Leitura-dos-Dados">1. Importação das Bibliotecas e Leitura dos Dados<a class="anchor-link" href="#1.-Importa%C3%A7%C3%A3o-das-Bibliotecas-e-Leitura-dos-Dados">¶</a></h3><p>Carregamos os arquivos CSV para os respectivos DataFrames.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [58]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">caminho_arquivos</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"clientes"</span><span class="p">:</span> <span class="s2">"dados/olist_customers_dataset.csv"</span><span class="p">,</span>
@@ -7547,12 +7570,23 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="2.-Pr%C3%A9-visualiza%C3%A7%C3%A3o-dos-Dados">2. Pré-visualização dos Dados<a class="anchor-link" href="#2.-Pr%C3%A9-visualiza%C3%A7%C3%A3o-dos-Dados">¶</a></h3><p>Exibimos uma amostra de cada DataFrame para entender sua estrutura e conteúdo.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [59]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">clientes_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -7566,7 +7600,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7595,20 +7629,20 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th>93871</th>
-<td>110200ea348b1c2a93d9278d1ea168ef</td>
-<td>c0c30222d6b8c54d038e444aec6a0fbe</td>
-<td>88020</td>
-<td>florianopolis</td>
-<td>SC</td>
+<th>15267</th>
+<td>6d20f21ce3430fe1cdc152bc0041af66</td>
+<td>67c2459113aec7f2430393e9b224bff8</td>
+<td>31035</td>
+<td>belo horizonte</td>
+<td>MG</td>
 </tr>
 <tr>
-<th>40686</th>
-<td>e8eaf1cd83fb76f65bdf87f4ab372d59</td>
-<td>a8eebe144722bd04a876fc7b939b79f3</td>
-<td>13451</td>
-<td>santa barbara d'oeste</td>
-<td>SP</td>
+<th>1577</th>
+<td>915859a34b24020b5b9fd32c8ac40f0d</td>
+<td>2852756794b74680d1de8e8e8b8421ff</td>
+<td>66045</td>
+<td>belem</td>
+<td>PA</td>
 </tr>
 </tbody>
 </table>
@@ -7622,7 +7656,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [60]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">geolocalizacao_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -7636,7 +7670,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7665,20 +7699,20 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th>760837</th>
-<td>65636</td>
-<td>-5.104065</td>
-<td>-42.835038</td>
-<td>timon</td>
-<td>MA</td>
+<th>708238</th>
+<td>50070</td>
+<td>-8.060391</td>
+<td>-34.888638</td>
+<td>recife</td>
+<td>PE</td>
 </tr>
 <tr>
-<th>895054</th>
-<td>87140</td>
-<td>-23.449278</td>
-<td>-52.047445</td>
-<td>paicandu</td>
-<td>PR</td>
+<th>201977</th>
+<td>8223</td>
+<td>-23.529412</td>
+<td>-46.470318</td>
+<td>são paulo</td>
+<td>SP</td>
 </tr>
 </tbody>
 </table>
@@ -7692,7 +7726,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">itens_pedidos_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -7706,7 +7740,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7737,24 +7771,24 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th>53000</th>
-<td>789bf50b7eafcaff398ea0b735b4787e</td>
+<th>90373</th>
+<td>cd3e9759dc483946db2133168746fddf</td>
 <td>1</td>
-<td>19c91ef95d509ea33eda93495c4d3481</td>
-<td>06a2c3af7b3aee5d69171b0e14f0ee87</td>
-<td>2018-08-21 10:30:16</td>
-<td>122.99</td>
-<td>30.11</td>
+<td>64f905cf518f84bfe0fbcc33bf6f0e9a</td>
+<td>7b07b3c7487f0ea825fc6df75abd658b</td>
+<td>2017-07-04 11:05:15</td>
+<td>159.9</td>
+<td>25.67</td>
 </tr>
 <tr>
-<th>10802</th>
-<td>189b3afbf782ff8ab44477e006153155</td>
+<th>9427</th>
+<td>1586faea8b5e622028bb4d1e296d5b2d</td>
 <td>1</td>
-<td>b10eba910a974df70b8a12d0665cdb9e</td>
-<td>a3e9a2c700480d9bb01fba070ba80a0e</td>
-<td>2018-02-15 19:50:41</td>
-<td>39.00</td>
-<td>16.11</td>
+<td>21fb5057dd6a737df6851a7ab7a130da</td>
+<td>b14db04aa7881970e83ffa9426897925</td>
+<td>2017-02-19 17:16:38</td>
+<td>69.0</td>
+<td>22.77</td>
 </tr>
 </tbody>
 </table>
@@ -7768,7 +7802,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [62]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pagamentos_pedidos_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -7782,7 +7816,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[62]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7811,20 +7845,20 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th>68648</th>
-<td>f1392a30909dbd81bbe5973e40ebba37</td>
+<th>48579</th>
+<td>170dcd772ea4f51c3a859f9beef5d297</td>
+<td>5</td>
+<td>voucher</td>
 <td>1</td>
-<td>credit_card</td>
-<td>2</td>
-<td>103.33</td>
+<td>50.00</td>
 </tr>
 <tr>
-<th>25208</th>
-<td>ddba9859eaa6e81ea4f2ed0263d29291</td>
+<th>51486</th>
+<td>b892643960f1cfea9cc00aeb42097a4e</td>
 <td>1</td>
 <td>credit_card</td>
-<td>1</td>
-<td>69.44</td>
+<td>4</td>
+<td>201.75</td>
 </tr>
 </tbody>
 </table>
@@ -7838,7 +7872,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [63]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">avaliacoes_pedidos_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -7852,7 +7886,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7883,24 +7917,24 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th>16821</th>
-<td>047486d3e6302a4b529d91d4a2620a8f</td>
-<td>a841d4f6334d9f62504a151e34babe90</td>
-<td>4</td>
+<th>80990</th>
+<td>bbe6392cbb1d90212c6587d4b2c23ffa</td>
+<td>7835af1856de332f2f3c9204b740a3a2</td>
+<td>3</td>
 <td>NaN</td>
-<td>Gostei!!!</td>
-<td>2018-05-16 00:00:00</td>
-<td>2018-05-26 18:14:49</td>
+<td>NaN</td>
+<td>2018-01-04 00:00:00</td>
+<td>2018-01-07 14:17:27</td>
 </tr>
 <tr>
-<th>42009</th>
-<td>a4f94523ffd54267a8664d3ffaf21390</td>
-<td>940c5c8cc3ea86ca75804a5c8c350533</td>
+<th>45248</th>
+<td>33345f88cdc80490db5ba07579ea50e0</td>
+<td>b454e4c4cc8948478a19ca36c5e77bee</td>
 <td>5</td>
 <td>NaN</td>
-<td>Muito bom.</td>
-<td>2017-03-30 00:00:00</td>
-<td>2017-04-02 21:58:29</td>
+<td>NaN</td>
+<td>2018-05-12 00:00:00</td>
+<td>2018-05-14 22:03:28</td>
 </tr>
 </tbody>
 </table>
@@ -7914,7 +7948,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [64]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pedidos_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -7928,7 +7962,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[64]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7960,26 +7994,26 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th>67590</th>
-<td>d79c75050fb130c942055bff27c1be5a</td>
-<td>a10f9dedb64942cfa51dd19dc7972459</td>
+<th>13293</th>
+<td>86d98161e71a519565b571ca0e1ed87e</td>
+<td>246cf7075108c701caac778132a2a9fc</td>
 <td>delivered</td>
-<td>2018-03-14 20:59:27</td>
-<td>2018-03-14 21:10:32</td>
-<td>2018-03-20 18:17:21</td>
-<td>2018-05-03 21:48:30</td>
-<td>2018-04-11 00:00:00</td>
+<td>2017-06-19 10:01:51</td>
+<td>2017-06-19 10:10:21</td>
+<td>2017-06-19 20:22:46</td>
+<td>2017-07-03 12:41:16</td>
+<td>2017-07-11 00:00:00</td>
 </tr>
 <tr>
-<th>94259</th>
-<td>8c1d4b6d5a4c76d480dc3f8e766b285e</td>
-<td>2774f58d0ab448db599165baa622db3f</td>
+<th>11336</th>
+<td>9dece38ba34c2b0050efef28e85d7bde</td>
+<td>db913a930f7150edd2c9d735b27df1b1</td>
 <td>delivered</td>
-<td>2018-04-26 09:09:16</td>
-<td>2018-04-26 21:50:20</td>
-<td>2018-04-27 15:01:00</td>
-<td>2018-05-02 19:13:04</td>
-<td>2018-05-28 00:00:00</td>
+<td>2018-05-13 19:02:14</td>
+<td>2018-05-13 19:12:38</td>
+<td>2018-05-14 13:44:00</td>
+<td>2018-05-18 20:58:28</td>
+<td>2018-06-06 00:00:00</td>
 </tr>
 </tbody>
 </table>
@@ -7993,7 +8027,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [65]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">produtos_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -8007,7 +8041,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8040,28 +8074,28 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th>21605</th>
-<td>81b4af53ab9d9934fd591fd680f4aee9</td>
-<td>telefonia</td>
-<td>46.0</td>
-<td>1424.0</td>
-<td>2.0</td>
-<td>100.0</td>
+<th>31684</th>
+<td>38fa750a3a3b3204f169c86a3284d387</td>
+<td>esporte_lazer</td>
+<td>39.0</td>
+<td>1057.0</td>
+<td>1.0</td>
+<td>183.0</td>
 <td>16.0</td>
-<td>22.0</td>
-<td>11.0</td>
+<td>18.0</td>
+<td>16.0</td>
 </tr>
 <tr>
-<th>25727</th>
-<td>33b22110fa818ff5f0c387a79f19b612</td>
-<td>esporte_lazer</td>
-<td>52.0</td>
-<td>891.0</td>
-<td>1.0</td>
-<td>300.0</td>
-<td>16.0</td>
-<td>16.0</td>
-<td>16.0</td>
+<th>28507</th>
+<td>2a71535169f1f7a56b266e6877bb8cf9</td>
+<td>telefonia</td>
+<td>22.0</td>
+<td>285.0</td>
+<td>3.0</td>
+<td>100.0</td>
+<td>19.0</td>
+<td>3.0</td>
+<td>11.0</td>
 </tr>
 </tbody>
 </table>
@@ -8075,7 +8109,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [66]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">vendedores_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -8089,7 +8123,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[66]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8117,39 +8151,39 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th>1547</th>
-<td>96f7c797de9ca20efbe14545bed63eec</td>
-<td>14140</td>
-<td>cravinhos</td>
-<td>SP</td>
-</tr>
-<tr>
-<th>2235</th>
-<td>f435898e493ba0356019a0b1cb8b55b1</td>
-<td>81720</td>
-<td>curitiba</td>
-<td>PR</td>
-</tr>
-<tr>
-<th>200</th>
-<td>7178f9f4dd81dcef02f62acdf8151e01</td>
-<td>89560</td>
-<td>videira</td>
-<td>SC</td>
-</tr>
-<tr>
-<th>2983</th>
-<td>a5ff20ff766e7f50bd5066f33da14413</td>
-<td>5522</td>
+<th>1598</th>
+<td>253f95b3a0e6983ae18aed49fbc2b845</td>
+<td>4141</td>
 <td>sao paulo</td>
 <td>SP</td>
 </tr>
 <tr>
-<th>2188</th>
-<td>b906dd0e57f282c7089171b6ed07982e</td>
-<td>87083</td>
-<td>parana</td>
-<td>PR</td>
+<th>874</th>
+<td>4aba391bc3b88717ce08eb11e44937b2</td>
+<td>45816</td>
+<td>arraial d'ajuda (porto seguro)</td>
+<td>BA</td>
+</tr>
+<tr>
+<th>647</th>
+<td>f62d7bb4a613ec758a03342d46b580b2</td>
+<td>36570</td>
+<td>vicosa</td>
+<td>MG</td>
+</tr>
+<tr>
+<th>822</th>
+<td>d2f3e277560ed4c6361284429b00f037</td>
+<td>12942</td>
+<td>atibaia</td>
+<td>SP</td>
+</tr>
+<tr>
+<th>1916</th>
+<td>8de8fe3af4449ed695d2434c933ed73e</td>
+<td>1215</td>
+<td>sao paulo</td>
+<td>SP</td>
 </tr>
 </tbody>
 </table>
@@ -8163,7 +8197,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [67]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">traducao_categorias_produtos_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -8177,7 +8211,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[67]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8203,14 +8237,14 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th>52</th>
-<td>sinalizacao_e_seguranca</td>
-<td>signaling_and_security</td>
+<th>44</th>
+<td>industria_comercio_e_negocios</td>
+<td>industry_commerce_and_business</td>
 </tr>
 <tr>
-<th>1</th>
-<td>informatica_acessorios</td>
-<td>computers_accessories</td>
+<th>40</th>
+<td>casa_construcao</td>
+<td>home_construction</td>
 </tr>
 </tbody>
 </table>
@@ -8224,7 +8258,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [68]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">produtos_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -8238,7 +8272,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[68]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8355,12 +8389,23 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.-Identifica%C3%A7%C3%A3o-de-Valores-Faltantes">3. Identificação de Valores Faltantes<a class="anchor-link" href="#3.-Identifica%C3%A7%C3%A3o-de-Valores-Faltantes">¶</a></h3><p>Identificamos valores faltantes em cada coluna dos DataFrames e organizamos os resultados em uma tabela consolidada para melhor visualização.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [69]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">resumo</span> <span class="o">=</span> <span class="p">[]</span>
@@ -8386,7 +8431,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[69]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8731,12 +8776,34 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="4.-Tratamento-de-Dados">4. Tratamento de Dados<a class="anchor-link" href="#4.-Tratamento-de-Dados">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="4.1-Substitui%C3%A7%C3%A3o-de-Valores-Ausentes">4.1 Substituição de Valores Ausentes<a class="anchor-link" href="#4.1-Substitui%C3%A7%C3%A3o-de-Valores-Ausentes">¶</a></h4>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [70]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">avaliacoes_pedidos_df</span><span class="p">[</span><span class="s1">'review_comment_message'</span><span class="p">]</span> <span class="o">=</span> <span class="n">avaliacoes_pedidos_df</span><span class="p">[</span><span class="s1">'review_comment_message'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">'Sem Comentário'</span><span class="p">)</span>
@@ -8751,7 +8818,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [71]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># preenche valores ausentes com a média nas colunas numéricas do DataFrame 'produtos_df'</span>
@@ -8763,15 +8830,26 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [72]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Calculando tempo médio de entrega</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># calcula tempo médio de entrega</span>
 <span class="n">pedidos_df</span><span class="p">[</span><span class="s1">'order_delivered_customer_date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">pedidos_df</span><span class="p">[</span><span class="s1">'order_delivered_customer_date'</span><span class="p">])</span>
 <span class="n">pedidos_df</span><span class="p">[</span><span class="s1">'order_purchase_timestamp'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">pedidos_df</span><span class="p">[</span><span class="s1">'order_purchase_timestamp'</span><span class="p">])</span>
 <span class="n">pedidos_df</span><span class="p">[</span><span class="s1">'delivery_time'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pedidos_df</span><span class="p">[</span><span class="s1">'order_delivered_customer_date'</span><span class="p">]</span> <span class="o">-</span> <span class="n">pedidos_df</span><span class="p">[</span><span class="s1">'order_purchase_timestamp'</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
@@ -8802,15 +8880,17 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [73]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Mesclando dados de itens_pedidos e produtos</span>
-<span class="n">itens_produtos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">itens_pedidos_df</span><span class="p">,</span> <span class="n">produtos_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'product_id'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">itens_produtos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">itens_pedidos_df</span><span class="p">,</span> <span class="n">produtos_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'product_id'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
+
 <span class="n">vendas_por_categoria</span> <span class="o">=</span> <span class="n">itens_produtos</span><span class="p">[</span><span class="s1">'product_category_name'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Categorias de produtos mais vendidas:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vendas_por_categoria</span><span class="p">)</span>
+<span class="n">vendas_por_categoria_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">vendas_por_categoria</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">vendas_por_categoria_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Categoria de Produto'</span><span class="p">,</span> <span class="s1">'Frequência de Vendas'</span><span class="p">]</span>
+
+<span class="n">vendas_por_categoria_df</span>
 </pre></div>
 </div>
 </div>
@@ -8820,25 +8900,91 @@ a.anchor-link {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-Categorias de produtos mais vendidas:
-product_category_name
-cama_mesa_banho                  11115
-beleza_saude                      9670
-esporte_lazer                     8641
-moveis_decoracao                  8334
-informatica_acessorios            7827
-                                 ...  
-cds_dvds_musicais                   14
-la_cuisine                          14
-pc_gamer                             9
-fashion_roupa_infanto_juvenil        8
-seguros_e_servicos                   2
-Name: count, Length: 73, dtype: int64
-</pre>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[73]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Categoria de Produto</th>
+<th>Frequência de Vendas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>cama_mesa_banho</td>
+<td>11115</td>
+</tr>
+<tr>
+<th>1</th>
+<td>beleza_saude</td>
+<td>9670</td>
+</tr>
+<tr>
+<th>2</th>
+<td>esporte_lazer</td>
+<td>8641</td>
+</tr>
+<tr>
+<th>3</th>
+<td>moveis_decoracao</td>
+<td>8334</td>
+</tr>
+<tr>
+<th>4</th>
+<td>informatica_acessorios</td>
+<td>7827</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>68</th>
+<td>cds_dvds_musicais</td>
+<td>14</td>
+</tr>
+<tr>
+<th>69</th>
+<td>la_cuisine</td>
+<td>14</td>
+</tr>
+<tr>
+<th>70</th>
+<td>pc_gamer</td>
+<td>9</td>
+</tr>
+<tr>
+<th>71</th>
+<td>fashion_roupa_infanto_juvenil</td>
+<td>8</td>
+</tr>
+<tr>
+<th>72</th>
+<td>seguros_e_servicos</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>73 rows × 2 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -8848,19 +8994,20 @@ Name: count, Length: 73, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [74]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Contando a frequência de vendas por região</span>
-<span class="n">vendas_geolocalizacao</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">clientes_df</span><span class="p">,</span> <span class="n">geolocalizacao_df</span><span class="p">,</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vendas_geolocalizacao</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">clientes_df</span><span class="p">,</span> <span class="n">geolocalizacao_df</span><span class="p">,</span> 
                                   <span class="n">left_on</span><span class="o">=</span><span class="s1">'customer_zip_code_prefix'</span><span class="p">,</span> 
                                   <span class="n">right_on</span><span class="o">=</span><span class="s1">'geolocation_zip_code_prefix'</span><span class="p">,</span> 
                                   <span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
 
 <span class="n">vendas_por_estado</span> <span class="o">=</span> <span class="n">vendas_geolocalizacao</span><span class="p">[</span><span class="s1">'geolocation_state'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Vendas por estado:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vendas_por_estado</span><span class="p">)</span>
+<span class="n">vendas_por_estado_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">vendas_por_estado</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">vendas_por_estado_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Estado'</span><span class="p">,</span> <span class="s1">'Frequência de Vendas'</span><span class="p">]</span>
+
+<span class="n">vendas_por_estado_df</span>
 </pre></div>
 </div>
 </div>
@@ -8870,41 +9017,282 @@ Name: count, Length: 73, dtype: int64
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-Vendas por estado:
-geolocation_state
-SP    5620430
-RJ    3015690
-MG    2878728
-RS     805370
-PR     626021
-SC     538638
-BA     365875
-ES     316654
-GO     133146
-MT     122395
-PE     114588
-DF      93309
-PA      83554
-CE      63507
-MS      61473
-MA      53383
-AL      34861
-PB      27714
-SE      24584
-PI      23913
-RO      21244
-RN      20595
-TO      17509
-AC       7688
-AM       5587
-AP       4912
-RR       2087
-Name: count, dtype: int64
-</pre>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[74]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Estado</th>
+<th>Frequência de Vendas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>SP</td>
+<td>5620430</td>
+</tr>
+<tr>
+<th>1</th>
+<td>RJ</td>
+<td>3015690</td>
+</tr>
+<tr>
+<th>2</th>
+<td>MG</td>
+<td>2878728</td>
+</tr>
+<tr>
+<th>3</th>
+<td>RS</td>
+<td>805370</td>
+</tr>
+<tr>
+<th>4</th>
+<td>PR</td>
+<td>626021</td>
+</tr>
+<tr>
+<th>5</th>
+<td>SC</td>
+<td>538638</td>
+</tr>
+<tr>
+<th>6</th>
+<td>BA</td>
+<td>365875</td>
+</tr>
+<tr>
+<th>7</th>
+<td>ES</td>
+<td>316654</td>
+</tr>
+<tr>
+<th>8</th>
+<td>GO</td>
+<td>133146</td>
+</tr>
+<tr>
+<th>9</th>
+<td>MT</td>
+<td>122395</td>
+</tr>
+<tr>
+<th>10</th>
+<td>PE</td>
+<td>114588</td>
+</tr>
+<tr>
+<th>11</th>
+<td>DF</td>
+<td>93309</td>
+</tr>
+<tr>
+<th>12</th>
+<td>PA</td>
+<td>83554</td>
+</tr>
+<tr>
+<th>13</th>
+<td>CE</td>
+<td>63507</td>
+</tr>
+<tr>
+<th>14</th>
+<td>MS</td>
+<td>61473</td>
+</tr>
+<tr>
+<th>15</th>
+<td>MA</td>
+<td>53383</td>
+</tr>
+<tr>
+<th>16</th>
+<td>AL</td>
+<td>34861</td>
+</tr>
+<tr>
+<th>17</th>
+<td>PB</td>
+<td>27714</td>
+</tr>
+<tr>
+<th>18</th>
+<td>SE</td>
+<td>24584</td>
+</tr>
+<tr>
+<th>19</th>
+<td>PI</td>
+<td>23913</td>
+</tr>
+<tr>
+<th>20</th>
+<td>RO</td>
+<td>21244</td>
+</tr>
+<tr>
+<th>21</th>
+<td>RN</td>
+<td>20595</td>
+</tr>
+<tr>
+<th>22</th>
+<td>TO</td>
+<td>17509</td>
+</tr>
+<tr>
+<th>23</th>
+<td>AC</td>
+<td>7688</td>
+</tr>
+<tr>
+<th>24</th>
+<td>AM</td>
+<td>5587</td>
+</tr>
+<tr>
+<th>25</th>
+<td>AP</td>
+<td>4912</td>
+</tr>
+<tr>
+<th>26</th>
+<td>RR</td>
+<td>2087</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [75]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vendas_por_cidade</span> <span class="o">=</span> <span class="n">vendas_geolocalizacao</span><span class="p">[</span><span class="s1">'geolocation_city'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="n">vendas_por_cidade_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">vendas_por_cidade</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">vendas_por_cidade_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Cidade'</span><span class="p">,</span> <span class="s1">'Frequência de Vendas'</span><span class="p">]</span>
+
+<span class="n">vendas_por_cidade_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[75]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Cidade</th>
+<th>Frequência de Vendas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>rio de janeiro</td>
+<td>1913913</td>
+</tr>
+<tr>
+<th>1</th>
+<td>sao paulo</td>
+<td>1164470</td>
+</tr>
+<tr>
+<th>2</th>
+<td>belo horizonte</td>
+<td>737556</td>
+</tr>
+<tr>
+<th>3</th>
+<td>niteroi</td>
+<td>393175</td>
+</tr>
+<tr>
+<th>4</th>
+<td>curitiba</td>
+<td>255731</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>5807</th>
+<td>josé boiteux</td>
+<td>1</td>
+</tr>
+<tr>
+<th>5808</th>
+<td>pinhal da serra</td>
+<td>1</td>
+</tr>
+<tr>
+<th>5809</th>
+<td>vitorinos</td>
+<td>1</td>
+</tr>
+<tr>
+<th>5810</th>
+<td>vitorinos - alto rio doce</td>
+<td>1</td>
+</tr>
+<tr>
+<th>5811</th>
+<td>santa amélia</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>5812 rows × 2 columns</p>
+</div>
 </div>
 </div>
 </div>
