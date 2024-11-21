@@ -1,1 +1,2 @@
 utilizar geopandas
+tempo médio de entrega por categoria/produto/avaliacao/etc
