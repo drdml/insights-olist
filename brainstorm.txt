@@ -1,8 +1,0 @@
-utilizar geopandas
-tempo médio de entrega por categoria/produto/avaliacao/etc
-
-
-conferir nome das colunas e index
-
-elaborar no contexto dos dados ausentes
-analisar a estrutura dos dataframes antes de começar a EDA
