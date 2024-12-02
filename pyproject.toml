@@ -8,4 +8,6 @@ dependencies = [
     "jupyter>=1.1.1",
     "matplotlib>=3.9.2",
     "pandas>=2.2.3",
+    "plotly>=5.24.1",
+    "streamlit>=1.40.2",
 ]
